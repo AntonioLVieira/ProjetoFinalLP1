@@ -36,8 +36,6 @@ namespace ProjetoFinalLP1
                 {
                     currentPlayer = 1;
                 }
-
-            
             }
         }
 

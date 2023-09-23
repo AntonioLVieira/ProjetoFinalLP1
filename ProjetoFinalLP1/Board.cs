@@ -36,6 +36,15 @@ public class Board
         if (newPosition >= board.Length)
             newPosition = board.Length - 1;
 
+        if (player == 1 && newPosition == player2Position)
+        {
+            player2Position = 0;
+        }
+        else if (player == 2 && newPosition == player1Position)
+        {
+            player1Position = 0;
+        }
+
         if (player == 1)
             player1Position = newPosition;
         else
