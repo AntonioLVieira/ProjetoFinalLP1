@@ -1,9 +1,17 @@
 ﻿using System;
 
+
 namespace ProjetoFinalLP1
 {
+    /// <summary>
+    /// Class Program (principal)
+    /// </summary>
     class Program
     {
+        /// <summary>
+        /// Primeira função a ser chamada, quando o programa é executado
+        /// </summary>
+        /// <param name="args">Lê os inputs da linha de comandos</param>
         static void Main(string[] args)
         {
             Board board = new Board();
@@ -24,7 +32,7 @@ namespace ProjetoFinalLP1
 
                 if (board.CheckWin())
                 {
-                    break; 
+                    break;
                 }
 
                 if (currentPlayer == 1)
@@ -38,6 +46,10 @@ namespace ProjetoFinalLP1
             }
         }
 
+        /// <summary>
+        /// Mostra o estado atual do tabuleiro.
+        /// </summary>
+        /// <param name="board">Tabuleiro</param>
         static void GameBoard(Board board)
         {
             string[] boardPositions = new string[14];
@@ -69,8 +81,8 @@ namespace ProjetoFinalLP1
             Console.WriteLine(" ║   ║   ║   ║   ║   ║   ║");
             Console.WriteLine(" ╚═══╩═══╩═══╩═══╩═══╩═══╝");
             Console.WriteLine("   7  8  9   10   11   12");
-            Console.WriteLine("Player 1 is in position: " + board.player1Position);
-            Console.WriteLine("Player 2 is in position: " + board.player2Position);
+            Console.WriteLine("Player 1 is in position: " + board.Player1Position);
+            Console.WriteLine("Player 2 is in position: " + board.Player2Position);
         }
     }
 }
