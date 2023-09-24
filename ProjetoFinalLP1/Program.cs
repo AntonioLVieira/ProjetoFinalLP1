@@ -22,10 +22,9 @@ namespace ProjetoFinalLP1
 
                 board.MovePiece(currentPlayer, steps);
 
-                if (board.CheckWin(currentPlayer))
+                if (board.CheckWin())
                 {
-                    Console.WriteLine("Congrats Player " + currentPlayer + ", you WON!!");
-                    break;
+                    break; 
                 }
 
                 if (currentPlayer == 1)
@@ -45,7 +44,7 @@ namespace ProjetoFinalLP1
 
             for (int i = 0; i < 14; i++)
             {
-                switch (board.GetPieceAtPosition(i))
+                switch (board.GetPiece(i))
                 {
                     case 0:
                         boardPositions[i] = "-";
