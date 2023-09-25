@@ -32,6 +32,8 @@ Métodos existentes:
 ### *Referências*
 
 *ChatGPT* - foi usado para criar alguns símbolos para o tabuleiro (ex.: ║, ╬, ═)
+W3Schools - site oficial
+Curso C# Online - Udemy site oficial
 
 ### *Bibliotecas* 
 - System

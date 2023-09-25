@@ -6,26 +6,36 @@ using System;
 public class Board
 {
     private int[] board;
-    
+
     /// <summary>
     /// Obtém a posição do jogador 1.
     /// </summary>
     public int Player1Position { get; private set; }
-    
+
     /// <summary>
     /// Obtém a posição do jogador 2.
     /// </summary>
     public int Player2Position { get; private set; }
-    
+
     /// <summary>
     /// Obtém o número de peças do jogador 1.
     /// </summary>
     public int Player1Pieces { get; private set; }
-    
+
     /// <summary>
     /// Obtém o número de peças do jogador 2.
     /// </summary>
     public int Player2Pieces { get; private set; }
+
+    /// <summary>
+    /// Obtém o número de peças do jogador 1 que já acabaram o tabuleiro.
+    /// </summary>
+    public int Player1PiecesFinished { get; private set; }
+
+    /// <summary>
+    /// Obtém o número de peças do jogador 2 que já acabaram o tabuleiro.
+    /// </summary>
+    public int Player2PiecesFinished { get; private set; }
 
     /// <summary>
     /// Cria uma nova instância da classe <see cref="Board"/>
@@ -37,12 +47,13 @@ public class Board
         Player2Position = 0;
         Player1Pieces = 7;
         Player2Pieces = 7;
+        Player1PiecesFinished = 0;
+        Player2PiecesFinished = 0;
     }
-
     /// <summary>
     /// Coloca a peça na posição correta
     /// </summary>
-    /// <param name="position">Posição da peça no tabuleiro</param>
+    /// <param name="position">A posição no tabuleiro, de onde é suposto por a peça.</param>
     public int GetPiece(int position)
     {
         if (position >= 0 && position < board.Length)
@@ -51,9 +62,10 @@ public class Board
         }
         else
         {
-            return -1;
+        
+            return -1; 
         }
-    }
+}
 
     /// <summary>
     /// Move a peça do jogador tendo em conta o número de passos
@@ -84,10 +96,12 @@ public class Board
             if (player == 1)
             {
                 Player1Pieces--;
+                Player1PiecesFinished++;
             }
             else
             {
                 Player2Pieces--;
+                Player2PiecesFinished++;
             }
         }
 
@@ -125,10 +139,12 @@ public class Board
         if (player == 1)
         {
             currentPosition = Player1Position;
+            Player1PiecesFinished++;
         }
         else
         {
             currentPosition = Player2Position;
+            Player2PiecesFinished++;
         }
         board[currentPosition] = 0;
     }

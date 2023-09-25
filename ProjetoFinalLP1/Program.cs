@@ -30,6 +30,9 @@ namespace ProjetoFinalLP1
 
                 board.MovePiece(currentPlayer, steps);
 
+                Console.WriteLine("Player 1 already finished " + board.Player1PiecesFinished + " Pieces");
+                Console.WriteLine("Player 2 already finished " + board.Player2PiecesFinished + " Pieces");
+
                 if (board.CheckWin())
                 {
                     break;
